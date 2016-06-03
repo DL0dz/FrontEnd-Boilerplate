@@ -1,0 +1,253 @@
+.red
+  color _red
+
+.home__title
+  font 1.1em 'Montserrat_regular', Helvetica, sans-serif
+  text-align center
+  padding 0 .5em
+  margin 2em 0
+
+.signup--home
+  width 22em
+  max-width 90%
+  margin 1em auto
+  border 2px solid _gray
+  text-align center
+  padding 1em 1.5em
+  border-radius 1px
+  background hsla(0, 100%, 100%, .5)
+
+.signup--home-logo-img
+  width 6em
+
+.signup--home-title
+  font 1.3em 'Montserrat_regular', Helvetica, sans-serif
+  margin 1em 0
+
+.signup--home-submit
+  width 12em
+  margin auto
+
+.home__section
+  padding .5em
+
+.home__title3
+  padding-bottom .5em
+  line-height 1.5em
+
+.home__article
+  margin-bottom 2em
+
+.home__link
+  color _red
+  font-family 'Montserrat_regular', Helvetica, sans-serif
+  text-decoration underline
+
+
+@media screen and (min-width: 60em)
+  .home__title
+    font-size 1.4em
+
+  .home
+    margin auto
+    position relative
+    display flex
+    max-width 80em
+
+  .home__container
+    margin-left 2.5%
+    flex 0 1 60%
+
+  .signup--home
+    width 22em
+    max-width 33%
+    position fixed
+    top 5em
+    left 65%
+
+
+.signin
+  align-items center
+  display flex
+  flex-direction column
+  height 100%
+  justify-content center
+  text-align center
+
+.signin-bloc
+  width 20em
+  max-width 80%
+
+.signin-fieldset
+  border none
+  padding 0
+
+.signin-title
+  font 1.5em 'Montserrat_regular', Helvetica, sans-serif
+  padding 0 0 6vh 0
+
+.signin-email
+  text-align left
+
+.signin-email-label,
+.signin-email-input
+  width 100%
+
+.signin-email-label
+  display block
+  font-family 'Montserrat_semiBold', Helvetica, sans-serif
+  padding 0 0 .4em .5em
+  color _red
+
+.signin-email-input
+  border 2px solid _red
+  border-radius .1em
+  font-size 1em
+  padding .6em 0
+  text-indent .5em
+  color _gray
+  &:-webkit-autofill
+    -webkit-box-shadow: 0 0 0px 1000px white inset
+
+.signin-submit
+  border-radius .1em
+  border none
+  padding .5em .6em
+  box-shadow inset 0 0 3px 1px hsla(0, 100%, 100%, .3), 0 2px 2px hsla(0, 0%, 0%, 0.15), 0 2px 2px -2px hsla(0, 0%, 0%, .2)
+  text-shadow 0 -.5px 1px hsla(0, 100%, 100%, .15)
+  transition all .15s linear
+  background _red
+  color white
+  -webkit-appearance none
+  &:hover, &:focus
+    transition all .2s linear
+    background _orange
+  width 100%
+  font 1.2em 'Montserrat_regular', Helvetica, sans-serif
+  margin 1em 0
+
+.signin-link--help
+  font italic .8em 'Montserrat_ultraLight', Helvetica, sans-serif
+  color _gray
+
+
+.signup
+  align-items center
+  display flex
+  flex-direction column
+  height 100%
+  justify-content center
+  text-align center
+
+.signup-logo-img
+  width 17em
+  height 2.277em
+  display block
+
+.signup-bloc
+  margin-top 5vh
+  width 20em
+  max-width 75%
+
+.signup-title
+  font 1.5em 'Montserrat_regular', Helvetica, sans-serif
+  padding 0 0 2vh 0
+
+.signup-fieldset
+  display flex
+  flex-direction column
+  padding 0
+  border 0
+
+.signup-legend
+  flex 1 0 auto
+  font 1em 'Montserrat_semiBold', Helvetica, sans-serif
+  text-align left
+  text-indent .3em
+  color _gray
+  padding-bottom .4em
+
+.signup-radios
+  margin-bottom .8em
+  flex 1 0 100%
+  font .9em 'Montserrat_regular', Helvetica, sans-serif
+  display flex
+  justify-content space-around
+
+.signup-radio
+  display none
+
+label[for^='type_']
+  position relative
+  &::before
+    background url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20100%20100%22%3E%0A%20%20%3Ccircle%20id%3D%22empty%22%20cx%3D%2250%22%20cy%3D%2250%22%20r%3D%2240%22%20style%3D%22stroke-width%3A8px%3B%20stroke%3Ahsla%28260%2C%202%25%2C%2025%25%2C%201%29%3B%20fill%3A%23fff%22/%3E%0A%3C/svg%3E%0A') no-repeat
+    content ''
+    height .9em
+    left -1em
+    position absolute
+    top .15em
+    width .9em
+
+label[for^='type_']:first-of-type
+  margin-left 1em
+
+.signup-radio:checked + label[for^='type_']::before
+    background url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20100%20100%22%3E%0A%20%20%3Ccircle%20id%3D%22empty%22%20cx%3D%2250%22%20cy%3D%2250%22%20r%3D%2240%22%20style%3D%22stroke-width%3A8px%3B%20stroke%3Ahsla%28260%2C%202%25%2C%2025%25%2C%201%29%3B%20fill%3A%23fff%22/%3E%0A%20%20%3Ccircle%20id%3D%22plein%22%20cx%3D%2250%22%20cy%3D%2250%22%20r%3D%2225%22%20style%3D%22fill%3Ahsla%280%2C%2085%25%2C%2050%25%2C%201%29%22/%3E%0A%3C/svg%3E%0A') no-repeat
+
+.signup-label,
+.signup-input
+  display block
+  width 100%
+
+.signup-label
+  display block
+  font-family 'Montserrat_semiBold', Helvetica, sans-serif
+  padding 0 0 .4em .5em
+  color _gray
+  text-align left
+
+.signup-input
+  border 2px solid _gray
+  border-radius .1em
+  font-size 1em
+  padding .6em 0
+  margin-bottom .8em
+  text-indent .5em
+  color _gray
+  -webkit-appearance none
+  outline 0
+  &:-webkit-autofill
+    -webkit-box-shadow: 0 0 0px 1000px white inset
+
+.signup-submit
+  border-radius .1em
+  border none
+  padding .5em .6em
+  box-shadow inset 0 0 3px 1px hsla(0, 100%, 100%, .3), 0 2px 2px hsla(0, 0%, 0%, 0.15), 0 2px 2px -2px hsla(0, 0%, 0%, .2)
+  text-shadow 0 -.5px 1px hsla(0, 100%, 100%, .15)
+  transition all .15s linear
+  background _red
+  color white
+  cursor pointer
+  -webkit-appearance none
+  &:hover, &:focus
+    transition all .2s linear
+    background _orange
+  width 100%
+  font 1.2em 'Montserrat_regular', Helvetica, sans-serif
+  margin 1em 0 .5em
+
+.signup-link--help
+  font italic .8em 'Montserrat_ultraLight', Helvetica, sans-serif
+  color _gray
+
+@media screen and (min-width: 25em)
+  .signup-logo-img
+    width 20em
+    height 2.6789em
+  .signup-radios
+    font-size 1em
+
+@media screen and (min-height: 30em)
+  .signup-bloc
+    margin-top 12vh

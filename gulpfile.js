@@ -1,5 +1,5 @@
 //initialize all of our variables
-var app, base, concat, directory, gulp, gutil, hostname, path, refresh, sass, uglify, imagemin, minifyCSS, del, browserSync, autoprefixer, gulpSequence, shell, sourceMaps, plumber;
+var app, base, concat, directory, gulp, gutil, hostname, path, refresh, uglify, imagemin, minifyCSS, del, browserSync, autoprefixer, gulpSequence, shell, sourceMaps, plumber, data, stylus;
 
 var autoPrefixBrowserList = ['last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'];
 
@@ -9,7 +9,6 @@ gulp        = require('gulp');
 gutil       = require('gulp-util');
 concat      = require('gulp-concat');
 uglify      = require('gulp-uglify');
-sass        = require('gulp-sass');
 sourceMaps  = require('gulp-sourcemaps');
 imagemin    = require('gulp-imagemin');
 minifyCSS   = require('gulp-minify-css');
@@ -18,6 +17,8 @@ autoprefixer = require('gulp-autoprefixer');
 gulpSequence = require('gulp-sequence').use(gulp);
 shell       = require('gulp-shell');
 plumber     = require('gulp-plumber');
+data        = require('gulp-data');
+stylus      = require('gulp-stylus');
 
 gulp.task('browserSync', function() {
     browserSync({
@@ -80,9 +81,10 @@ gulp.task('scripts-deploy', function() {
 });
 
 //compiling our SCSS files
+
 gulp.task('styles', function() {
     //the initializer / master SCSS file, which will just be a file that imports everything
-    return gulp.src('app/styles/scss/init.scss')
+    return gulp.src('app/styles/stylus/main.styl')
                 //prevent pipe breaking caused by errors from gulp plugins
                 .pipe(plumber({
                   errorHandler: function (err) {
@@ -93,10 +95,10 @@ gulp.task('styles', function() {
                 //get sourceMaps ready
                 .pipe(sourceMaps.init())
                 //include SCSS and list every "include" folder
-                .pipe(sass({
+                .pipe(stylus({
                       errLogToConsole: true,
                       includePaths: [
-                          'app/styles/scss/'
+                          'app/styles/stylus/'
                       ]
                 }))
                 .pipe(autoprefixer({
@@ -118,12 +120,12 @@ gulp.task('styles', function() {
 //compiling our SCSS files for deployment
 gulp.task('styles-deploy', function() {
     //the initializer / master SCSS file, which will just be a file that imports everything
-    return gulp.src('app/styles/scss/init.scss')
+    return gulp.src('app/styles/stylus/main.styl')
                 .pipe(plumber())
                 //include SCSS includes folder
-                .pipe(sass({
+                .pipe(stylus({
                       includePaths: [
-                          'app/styles/scss',
+                          'app/styles/stylus',
                       ]
                 }))
                 .pipe(autoprefixer({
@@ -201,7 +203,7 @@ gulp.task('scaffold', function() {
 gulp.task('default', ['browserSync', 'scripts', 'styles'], function() {
     //a list of watchers, so it will watch all of the following files waiting for changes
     gulp.watch('app/scripts/src/**', ['scripts']);
-    gulp.watch('app/styles/scss/**', ['styles']);
+    gulp.watch('app/styles/stylus/**', ['styles']);
     gulp.watch('app/images/**', ['images']);
     gulp.watch('app/*.html', ['html']);
 });

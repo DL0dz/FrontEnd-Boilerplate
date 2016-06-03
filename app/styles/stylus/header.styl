@@ -1,0 +1,114 @@
+.header--logged,
+.header
+  height 5em
+
+.header--logged-topnav,
+.header-topnav
+  align-items center
+  background _peach
+  box-shadow 0 0 3px 1px hsla(0, 0%, 0%, 0.15)
+  display flex
+  flex-wrap wrap
+  font 100% 'Montserrat_regular', Helvetica, sans-serif
+  height 5em
+  justify-content center
+  width 100%
+
+.header--logged-topnav
+  position fixed
+
+.header--logged-avatar,
+.header--logged-logo
+  order -1
+  margin 0 1em
+
+.header--logged-logoSmall,
+.header--logged-avatar-img
+  border-radius 50%
+  display block
+  height 2em
+  width 2em
+
+.header-logo
+  align-self center
+  display flex
+  flex 1 0 100%
+  height 2em
+  justify-content center
+
+.header-logo-img
+  height 2em
+  width 14.9em
+
+.header--logged-nav,
+.header-nav
+  flex 1 0 auto
+
+.nav-first
+  display flex
+  justify-content center
+
+.nav-link, .nav--second-link
+  color _gray
+  padding 0 1em
+  text-decoration none
+  &:hover
+    color _orange
+
+.header--logged-secondNav
+  background _peach
+  box-shadow 0 1px 1px 0 hsla(0, 0%, 0%, 0.15)
+  font-size .8em
+  position absolute
+  right 0
+  top 6em
+  width 100%
+
+.nav--second
+  display flex
+  justify-content center
+
+.nav--second-link
+  display block
+  padding 1em
+
+.js--hide
+  display none
+
+@media screen and (min-width: 25em)
+  .header--logged
+    height 2.7em
+
+  .header--logged-topnav
+    flex-wrap nowrap
+    height 2.7em
+
+  .header--logged-avatar
+    order 1
+
+  .header--logged-secondNav
+    background _peach
+    border-radius .1rem
+    box-shadow 0 0 3px 1px hsla(0, 0%, 0%, 0.15)
+    right .3em
+    top 3.75em
+    width auto
+
+    .nav--second
+      flex-direction column
+
+@media screen and (min-width: 37.5em)
+  .header
+    height 2.7em
+
+  .header-topnav
+    flex-wrap nowrap
+    height 2.7em
+    justify-content space-between
+
+  .header-nav
+    flex 0 0 auto
+
+  .header-logo
+    flex 0 1 auto
+    margin-left 1em
